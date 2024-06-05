@@ -38,6 +38,7 @@ html {
 }
 
 .navbar-brand img {
+  border-radius: 20px;
   width: 5rem;
   height: 5rem;
 }
