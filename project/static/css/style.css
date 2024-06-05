@@ -549,7 +549,7 @@ ul {
   line-height: 50px;
   text-align: center;
   letter-spacing: 12px;
-  color: #fff;
+  color: #333;
 }
 
 .about-page-text {
@@ -698,4 +698,7 @@ ul {
 }
 .nothing-found-content p a:hover {
   color: #d3122a
+}
+.breadcrumb-area{
+  height: 300px;
 }
