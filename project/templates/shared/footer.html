@@ -6,15 +6,15 @@
       <div class="row">
         <div class="footer-single-widget col-md-6">
           <p class="footer-email"><a href="mailto:contact@lezada.com"
-              class="link-secondary link-underline-opacity-0">contact@loveandlaces.uk.co</a></p>
-          <a href="tel:+971583035499" class="footer-phone link-underline link-underline-opacity-0">(+88) 123 4566 6868</a>
+              class="link-secondary link-underline-opacity-0">{{ setting.email }}</a></p>
+          <a href="tel:{{ setting.call }}" class="footer-phone link-underline link-underline-opacity-0">{{ setting.call }}</a>
         </div>
         <div class="footer-single-widget col-md-3 col-6">
           <nav class="footer-single-widget__nav">
             <ul>
               <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="#">Flower Walls</a></li>
+              <li><a href="#">Contact Us</a></li>
             </ul>
           </nav>
         </div>
@@ -54,7 +54,7 @@
         </div>
         <div class="col-md-6">
           <div class="text-start text-md-center mb-4 navbar-brand">
-            <img src="{% static "logo/logo.jpeg" %}" class="img-fluid" alt="">
+            <img src="{{ setting.logo.url }}" class="img-fluid" alt="">
           </div>
         </div>
       </div>

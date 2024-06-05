@@ -10,3 +10,6 @@ def header(request, *args, **kwargs):
 
 def footer(request, *args, **kwargs):
     return render(request, 'shared/footer.html')
+
+def about_page(request):
+    return render(request, 'about.html')
