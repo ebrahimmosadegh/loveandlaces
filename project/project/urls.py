@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from .views import header, footer, home_page, about_page
+from .views import header, footer, home_page, about_page, terms_conditions_page
 from project import settings
 
 urlpatterns = [
@@ -26,6 +26,8 @@ urlpatterns = [
     path('header', header, name='header'),
     path('footer', footer, name='footer'),
     path('about/', about_page, name='about'),
+    path('terms-conditions/', terms_conditions_page, name='terms-conditions'),
+    path('', include('contact.urls')),
     path('admin/', admin.site.urls),
 ]
 

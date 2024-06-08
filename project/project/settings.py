@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_render_partial',
     # app website
     'tools',
+    'contact',
 ]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -130,6 +131,10 @@ STATICFILES_DIRS = [BASE_DIR / 'static',]
 # Managing media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Google Captcha setting
+GOOGLE_RECAPTCHA_SITE_KEY = '6Lfc82gcAAAAAAWB0KFsLH-F_yelwr1H-r4IYAdX'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Lfc82gcAAAAAPAnNEEfI2r9uKWFOpqhiKRcYEck'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

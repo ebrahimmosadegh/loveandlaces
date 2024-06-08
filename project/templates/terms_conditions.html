@@ -1,0 +1,32 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+{% load render_partial %}
+{% block title %}
+  love and laces | Terms and Conditions
+{% endblock %}
+{% block meta_seo %}
+  <meta name="description" content="{{ setting.tag_description }}" />
+  <meta name="keywords" content="{{ setting.tag_keywords }}" />
+  <meta property="og:title" content="{{ setting.title }}" />
+  <meta property="og:description" content="{{ setting.tag_description }}" />
+  <meta property="og:type" content="love and laces" />
+  <meta property="og:url" content="{{ setting.link }}" />
+  <meta property="og:image" content="{{ setting.logo }}" />
+{% endblock %}
+{% block content %}
+<div class="breadcrumb-area position-relative pt-5 pb-5 bg-img bg-image" data-background="{{ setting.bg_cover.url }}">
+  <div class="container">
+    <div class="row">
+      <div class="col position-absolute bottom-0 start-0 w-auto p-3 bg-white bg-opacity-50">
+        <h1 class="breadcrumb__title">Terms and Conditions Page</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}" class="link-secondary">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Terms and Conditions</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

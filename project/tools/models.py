@@ -15,7 +15,7 @@ class SettingsSite(models.Model):
     mobile = models.CharField(max_length=20, blank=True, verbose_name='Mobile number:')
     email = models.CharField(max_length=150, blank=True, verbose_name='Email:')
     address = models.CharField(max_length=200, blank=True, verbose_name='Address:')
-    location_maps = models.URLField(blank=True, verbose_name='Location Maps:')
+    location_maps = models.CharField(max_length=600,blank=True, verbose_name='Location Maps:')
     hour_work = models.CharField(max_length=200, blank=True, verbose_name='Hour Work:')
     tag_keywords = models.TextField(verbose_name='Tag keywords:')
     tag_description = models.CharField(max_length=250, verbose_name='Tag description:')
