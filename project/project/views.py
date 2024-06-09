@@ -14,5 +14,3 @@ def footer(request, *args, **kwargs):
 def about_page(request):
     return render(request, 'about.html')
 
-def terms_conditions_page(request):
-    return render(request, 'terms_conditions.html')

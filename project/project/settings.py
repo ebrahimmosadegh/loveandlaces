@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_render_partial',
+    'ckeditor',
     # app website
     'tools',
     'contact',
+    'termsandconditions',
+    'flowerwall',
 ]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -140,3 +143,5 @@ GOOGLE_RECAPTCHA_SECRET_KEY = '6Lfc82gcAAAAAPAnNEEfI2r9uKWFOpqhiKRcYEck'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"

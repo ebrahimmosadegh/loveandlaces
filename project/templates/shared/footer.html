@@ -5,7 +5,7 @@
     <div class="container-lg">
       <div class="row">
         <div class="footer-single-widget col-md-6">
-          <p class="footer-email"><a href="mailto:contact@lezada.com"
+          <p class="footer-email"><a href="mailto:{{ setting.email }}"
               class="link-secondary link-underline-opacity-0">{{ setting.email }}</a></p>
           <a href="tel:{{ setting.call }}" class="footer-phone link-underline link-underline-opacity-0">{{ setting.call }}</a>
         </div>
@@ -15,6 +15,7 @@
               <li><a href="{% url 'about' %}">About</a></li>
               <li><a href="#">Flower Walls</a></li>
               <li><a href="{% url 'contact' %}">Contact</a></li>
+              <li><a href="{% url 'terms-conditions' %}">Terms and Conditions</a></li>
             </ul>
           </nav>
         </div>
