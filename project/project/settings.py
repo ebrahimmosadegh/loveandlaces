@@ -145,3 +145,9 @@ GOOGLE_RECAPTCHA_SECRET_KEY = '6Lfc82gcAAAAAPAnNEEfI2r9uKWFOpqhiKRcYEck'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'versionCheck': False,
+    },
+}

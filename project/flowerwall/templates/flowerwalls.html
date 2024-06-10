@@ -1,0 +1,19 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+{% load render_partial %}
+{% block title %}
+  love and laces | Flower Walls
+{% endblock %}
+{% block meta_seo %}
+  <meta name="description" content="{{ setting.tag_description }}" />
+  <meta name="keywords" content="{{ setting.tag_keywords }}" />
+  <meta property="og:title" content="{{ setting.title }}" />
+  <meta property="og:description" content="{{ setting.tag_description }}" />
+  <meta property="og:type" content="love and laces" />
+  <meta property="og:url" content="{{ setting.link }}" />
+  <meta property="og:image" content="{{ setting.logo }}" />
+{% endblock %}
+{% block content %}
+
+{% endblock %}
+

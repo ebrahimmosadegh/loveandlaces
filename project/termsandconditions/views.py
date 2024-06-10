@@ -6,7 +6,7 @@ from django.core.exceptions import ObjectDoesNotExist
 def terms_conditions_page(request):
     try:
         context ={
-            'query': termsAndConditions.objects.all()
+            'query': termsAndConditions.objects.get()
         }
         return render(request, 'terms_conditions.html',context)
     except ObjectDoesNotExist:
