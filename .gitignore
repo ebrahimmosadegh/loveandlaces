@@ -15,6 +15,7 @@ Icon
 *.mp4
 media/
 staticfiles/
+migrations/
 # Thumbnails
 ._*
 
