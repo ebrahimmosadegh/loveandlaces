@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-h@-#brg#ffewr&ck)7ko-g)ub9ovhakbua)mxlml8ly%zv(kfm'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_render_partial',
+    'django.contrib.sites', #add sites to installed apps
+    'django.contrib.sitemaps',   #add Django sitemaps to installed apps
     'ckeditor',
     # app website
     'tools',
@@ -47,6 +50,8 @@ INSTALLED_APPS = [
     'flowerwall',
     'promotion',
 ]
+
+SITE_ID = 1   #define the site id
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -136,8 +141,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Google Captcha setting
-GOOGLE_RECAPTCHA_SITE_KEY = '6Lfc82gcAAAAAAWB0KFsLH-F_yelwr1H-r4IYAdX'
-GOOGLE_RECAPTCHA_SECRET_KEY = '6Lfc82gcAAAAAPAnNEEfI2r9uKWFOpqhiKRcYEck'
+GOOGLE_RECAPTCHA_SITE_KEY = config('GOOGLE_RECAPTCHA_SITE_KEY')
+GOOGLE_RECAPTCHA_SECRET_KEY = config('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

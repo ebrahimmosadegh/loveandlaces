@@ -16,6 +16,8 @@ Icon
 media/
 staticfiles/
 migrations/
+requirements.txt
+
 # Thumbnails
 ._*
 

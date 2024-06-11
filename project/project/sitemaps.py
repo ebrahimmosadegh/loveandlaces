@@ -1,16 +1,18 @@
 from django.contrib.sitemaps import Sitemap
-from ex_items.models import Experience
+from flowerwall.models import FlowerWall
+from promotion.models import Promotion
 from django.urls import reverse
 
 class ArticleSitemap(Sitemap):
-    changefreq = "weekly"
-    priority = 0.8
-    protocol = 'https'
+    changefreq = "monthly"
+    priority = 0.5
+    protocol = 'http'
     limit = 50000
 
     def items(self):
-        experience = Experience.objects.filter(active=True, active_admin=True)
-        return experience
+        flowerwall = FlowerWall.objects.all()
+        print('flowerwall: ',flowerwall)
+        return flowerwall
 
     def location(self,obj):
         return obj.get_absolute_url()
@@ -18,12 +20,27 @@ class ArticleSitemap(Sitemap):
     def lastmod(self, obj):
         return obj.timestamp
 
+class PromotionSitemap(Sitemap):
+    changefreq = "monthly"
+    priority = 0.5
+    protocol = 'http'
+    limit = 50000
+
+    def items(self):
+        promotion = Promotion.objects.all()
+        return promotion
+
+    def location(self,obj):
+        return obj.get_absolute_url()
+
+    def lastmod(self, obj):
+        return obj.timestamp
 
 #You can also add static pages such as home to your dynamic Django sitemap
 class HomeSitemap(Sitemap):
-    changefreq = "weekly"
-    priority = 0.7
-    protocol = 'https'
+    changefreq = "monthly"
+    priority = 0.5
+    protocol = 'http'
 
     def items(self):
         return ['home']
@@ -36,10 +53,10 @@ class HomeSitemap(Sitemap):
 class StaticSitemap(Sitemap):
     changefreq = "yearly"
     priority = 0.2
-    protocol = 'https'
+    protocol = 'http'
 
     def items(self):
-        return ['EX-settings:cooperation', 'EX-settings:about-us', 'EX-account:register', 'EX-account:login', 'EX-contact:contact-us']
+        return ['about', 'contact', 'terms-conditions']
 
     def location(self, item):
         return reverse(item)

@@ -17,9 +17,18 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-
+from .sitemaps import ArticleSitemap, PromotionSitemap, StaticSitemap, HomeSitemap
+from django.contrib.sitemaps.views import sitemap, index
+from .robots import robots_txt
 from .views import header, footer, home_page, about_page, handler404, handler500
 from project import settings
+
+sitemaps = {
+    'flowerwall':ArticleSitemap,
+    'promotion':PromotionSitemap,
+    'homeSiteMaps':HomeSitemap,
+    'static':StaticSitemap #add StaticSitemap to the dictionary
+}
 
 urlpatterns = [
     path('', home_page, name='home'),
@@ -32,6 +41,10 @@ urlpatterns = [
     path('', include('flowerwall.urls')),
     path('', include('promotion.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),  # Use ckeditor URLs
+    path('sitemap.xml', index, {'sitemaps': sitemaps}),
+    path('sitemap-<section>.xml', sitemap, {'sitemaps': sitemaps,'template_name': 'seo/custom_sitemap.html'}, 
+    name='django.contrib.sitemaps.views.sitemap'),
+    path("robots.txt", robots_txt),
 ]
 
 # handle 404 and 500 error
