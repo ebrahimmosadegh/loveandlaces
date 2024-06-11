@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-h@-#brg#ffewr&ck)7ko-g)ub9ovhakbua)mxlml8ly%zv(kfm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -45,12 +45,12 @@ INSTALLED_APPS = [
     'contact',
     'termsandconditions',
     'flowerwall',
+    'promotion',
 ]
-
-X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'tools.middleware.SessionCookieSameSiteWorkaround',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -151,3 +151,9 @@ CKEDITOR_CONFIGS = {
         'versionCheck': False,
     },
 }
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = None
+CSRF_COOKIE_SAMESITE = None

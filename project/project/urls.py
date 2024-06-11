@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from .views import header, footer, home_page, about_page
+from .views import header, footer, home_page, about_page, handler404, handler500
 from project import settings
 
 urlpatterns = [
@@ -30,9 +30,13 @@ urlpatterns = [
     path('', include('contact.urls')),
     path('', include('termsandconditions.urls')),
     path('', include('flowerwall.urls')),
+    path('', include('promotion.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),  # Use ckeditor URLs
 ]
 
+# handle 404 and 500 error
+handler404 = handler404
+handler500 = handler500
 
 if settings.DEBUG:
     # add root statice files

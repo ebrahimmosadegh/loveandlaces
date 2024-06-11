@@ -9,7 +9,7 @@ def upload_media_path(instance, filename):
 
 class SettingsSite(models.Model):
     title = models.CharField(max_length=150, blank=True, verbose_name='Title website:')
-    logo = models.FileField(upload_to=upload_media_path, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Logo:')
+    logo = models.FileField(upload_to=upload_media_path, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Logo:', help_text="resulotion(80*80)")
     link = models.URLField(blank=True, verbose_name='Link Website:')
     call = models.CharField(max_length=20, blank=True, verbose_name='Call number:')
     mobile = models.CharField(max_length=20, blank=True, verbose_name='Mobile number:')
@@ -20,22 +20,22 @@ class SettingsSite(models.Model):
     tag_keywords = models.TextField(verbose_name='Tag keywords:')
     tag_description = models.CharField(max_length=250, verbose_name='Tag description:')
     rules = models.TextField(verbose_name='Rules website:', blank=True)
-    bg_home_img = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Background Home Video:', help_text="acception format: "
+    bg_home_img = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Background Home Video:', help_text="resulotion(1720*500) , acception format: "
         'image = [jpg, png, bmp, gif, jpeg, svg]')
-    home_video = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['mp4', 'mpg', 'mpeg', 'avi', 'mkv',])], verbose_name='Video Home:', help_text="acception format: "
+    home_video = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['mp4', 'mpg', 'mpeg', 'avi', 'mkv',])], verbose_name='Video Home:', help_text="resulotion(1080*1920) , acception format: "
         'video = [mp4, mpg, mpeg, avi, mkv]')
-    bg_cover = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Background Cover About Us, Contact, Services,:', help_text="acception format: "
+    bg_cover = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Background Cover About Us, Contact, Services,:', help_text="resulotion(1920*380) , acception format: "
         'image = [jpg, png, bmp, gif, jpeg, svg]')
     text_aboutus = models.TextField(verbose_name='Text About Us:')
-    bg_aboutus_img = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Background About Us Video:', help_text="acception format: "
+    bg_aboutus_img = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Background About Us Video:', help_text="resulotion(970*800) , acception format: "
         'image = [jpg, png, bmp, gif, jpeg, svg]')
-    aboutus_video = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['mp4', 'mpg', 'mpeg', 'avi', 'mkv',])], verbose_name='Video About Us:', help_text="acception format: "
+    aboutus_video = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['mp4', 'mpg', 'mpeg', 'avi', 'mkv',])], verbose_name='Video About Us:', help_text="resulotion(1080*1920) , acception format: "
         'video = [mp4, mpg, mpeg, avi, mkv]')
-    bg_404 = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Background error 404:', help_text="acception format: "
+    bg_404 = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Background error 404:', help_text="resulotion(1920*1000) , acception format: "
         'image = [jpg, png, bmp, gif, jpeg, svg]')
     bg_500 = models.FileField(upload_to=upload_media_path, blank=True, validators=[
         FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg', ])], verbose_name='Background error 500:',
-                                      help_text="acception format: "
+                                      help_text="resulotion(1920*1000) , acception format: "
                                                 'image = [jpg, png, bmp, gif, jpeg, svg]')
     
     class Meta:

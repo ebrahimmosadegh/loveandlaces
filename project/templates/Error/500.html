@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'shared/_HeaderReferences.html' %}
+    <meta name="theme-color" content="#fafafa" />
+    <title>not found</title>
+</head>
+<body class="bg-body-tertiary">
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid">
+              <a class="navbar-brand ms-3" href="{% url "home" %}">
+                <img src="{{ setting.logo.url }}" alt="{{ setting.title }}">
+              </a>
+            </div>
+          </nav>
+    </header>
+    <div class="nothing-found-area bg-img bg-image" data-background="{{ setting.bg_500.url }}">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="nothing-found-content">
+                        <h1 class="display-1 fw-normal">Oops!</h1>
+                        <h1 class="mb-5 display-3 fw-normal">Page not found!</h1>
+                        <p class="direction-page">PLEASE GO BACK TO <a href="{% url "home" %}" class="link-underline link-underline-opacity-0">homepage</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'shared/_FooterReferences.html' %}
+</body>
+</html>

@@ -14,6 +14,47 @@
   <meta property="og:image" content="{{ setting.logo }}" />
 {% endblock %}
 {% block content %}
-
+<div class="breadcrumb-area position-relative pt-5 pb-5 bg-img bg-image" data-background="{{ setting.bg_cover.url }}">
+  <div class="container">
+    <div class="row">
+      <div class="col position-absolute bottom-0 start-0 w-auto p-3 bg-white bg-opacity-50">
+        <h1 class="breadcrumb__title">Flower Walls Page</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url "home" %}" class="link-secondary">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Flower Walls</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="container text-center mt-5 mb-4">
+  <h1 class="display-4 mb-3 fw-normal">Summer 2024</h1>
+  <h6 class="fw-normal">Find your Flower..</h6>
+</section>
+<section>
+  <div class="product-category container-fluid p-md-5 mb-2">
+    <div class="row">
+      {% for flower in flowers %}
+      <div class="col-lg-3 col-md-6">
+        <div class="single-category single-category--one">
+          <div class="single-category__image single-category__image--one">
+            <img src="{{ flower.image.url }}" class="img-fluid" alt="" />
+          </div>
+          <div class="single-category__content single-category__content--one space-mt--25 space-mb--25">
+            <div class="title">
+              <p>{{ flower.title }}</p>
+              <a href="{{ flower.get_absolute_url }}">+ Flower Show</a>
+            </div>
+            <p class="product-count">{{ flower.code }}</p>
+          </div>
+          <a class="banner-link" href="{{ flower.get_absolute_url }}"></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 {% endblock %}
 

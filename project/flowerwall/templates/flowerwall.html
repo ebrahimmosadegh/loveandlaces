@@ -26,10 +26,10 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="#" class="link-secondary">Home</a>
+                <a href="{% url "home" %}" class="link-secondary">Home</a>
               </li>
               <li class="breadcrumb-item">
-                <a href="#" class="link-secondary">Flower Walls</a>
+                <a href="{% url "flowerwalls" %}" class="link-secondary">Flower Walls</a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">{{ flower.title }}</li>
             </ol>
@@ -89,6 +89,5 @@
   </section>
 {% endblock %}
 {% block Footer_ref %}
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.3/swiper-bundle.min.js"></script>
-  <script src="{% static 'js/swiperFlowerwall.js' %}"></script>
+{% include 'shared/swiperFlowerwall.html' %}
 {% endblock %}

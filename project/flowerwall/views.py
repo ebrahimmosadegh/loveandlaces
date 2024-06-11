@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-
 from .models import FlowerWall, Gallery
 
 # Create your views here.
@@ -11,3 +10,10 @@ def flowerwall(request, slug):
 'galleries': galleries
     }
     return render(request,'flowerwall.html',context)
+
+def flower_list(request):
+    flowers = FlowerWall.objects.all()
+    context= {
+        'flowers': flowers
+    }
+    return render(request, 'flowerwalls.html', context)

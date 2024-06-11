@@ -1,0 +1,91 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+{% load render_partial %}
+{% block title %}
+  love and laces | {{ promotion.title }}
+{% endblock %}
+{% block meta_seo %}
+  <meta name="description" content="{{ setting.tag_description }}" />
+  <meta name="keywords" content="{{ setting.tag_keywords }}" />
+  <meta property="og:title" content="{{ setting.title }}" />
+  <meta property="og:description" content="{{ setting.tag_description }}" />
+  <meta property="og:type" content="love and laces" />
+  <meta property="og:url" content="{{ setting.link }}" />
+  <meta property="og:image" content="{{ setting.logo }}" />
+{% endblock %}
+{% block content %}
+<div class="breadcrumb-area position-relative pt-5 pb-5 bg-img bg-image" data-background="{{ setting.bg_cover.url }}">
+  <div class="container">
+      <div class="row">
+          <div class="col position-absolute bottom-0 start-0 w-auto p-3 bg-white bg-opacity-50">
+              <h1 class="breadcrumb__title">Promotion Page</h1>
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{% url "home" %}" class="link-secondary">Home</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">{{ promotion.title }}</li>
+                  </ol>
+              </nav>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="about-video-popup mt-5">
+  <div class="wide container">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="about-video-bg mb-5 bg-img bg-image mt-5"
+                  data-background="{{ promotion.image.url }}">
+                  <div class="about-video-content__text-icon d-flex flex-column h-100 justify-content-center">
+                      <div class="play-icon text-center mb-5">
+                          <button class="play-video" data-bs-toggle="modal" data-src="{{ promotion.video.url }}"
+                              data-bs-target="#playModal">
+                              <img src="https://img.icons8.com/external-bearicons-detailed-outline-bearicons/100/333333/external-play-essential-collection-bearicons-detailed-outline-bearicons.png"
+                                  class="img-fluid" alt="">
+                          </button>
+                      </div>
+                      <!-- Modal -->
+                      <div class="modal fade" id="playModal" tabindex="-1" role="dialog"
+                          aria-labelledby="playModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-sm" role="document">
+                              <div class="modal-content">
+                                  <div class="modal-body p-0">
+                                      <button type="button" class="btn-close btn-close-outside"
+                                          data-bs-dismiss="modal" aria-label="Close">
+                                      </button>
+                                      <!-- 9:16 aspect ratio -->
+                                      <div class="ratio ratio-9x16">
+                                          <iframe allowfullscreen src="" id="video" allowscriptaccess="always"
+                                              allow="autoplay"></iframe>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <h1>WATCH VIDEO</h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>ّ
+<div class="about-page-content mb-5">
+  <div class="container">
+      <div class="row">
+          <div class="mb-4 col-md-6">
+              <div class="about-single-block">
+                  <p class="subtitle">{{ promotion.subtitle }}</p>
+                  <h1>{{ promotion.title }}</h1>
+                  <p>{{ promotion.detail }}</p>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="about-single-block">
+                  <p class="subtitle">{{ promotion.subtitle_sec }}</p>
+                  <h1>{{ promotion.title_sec }}</h1>
+                  <p>{{ promotion.detail_sec }}</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

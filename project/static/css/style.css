@@ -522,6 +522,16 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .about-video-bg {
+      height: 600px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .about-video-bg {
+      height: 400px;
+  }
+}
 
 .about-video-bg .video-text a {
   color: #333;
@@ -571,6 +581,28 @@ ul {
   font-weight: 500;
   line-height: 24px;
   color: #333;
+}
+
+.about-single-block p.subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-single-block .h1, .about-single-block h1 {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 48px;
+  margin-bottom: 30px;
+  color: #333;
+}
+.about-single-block p {
+  font-size: 15px;
+  line-height: 26px;
+  margin-bottom: 40px;
+  color: #777;
 }
 
 .lezada-button--medium {

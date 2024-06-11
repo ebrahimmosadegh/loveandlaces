@@ -21,27 +21,18 @@
   <!-- Swiper -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
+      {% for promotion in promotions %}
       <div class="swiper-slide">
-        <div class="slide-bg-image bg-image" data-background="{% static 'img/1.jpeg' %}"></div>
+        <div class="slide-bg-image bg-image" data-background="{{ promotion.image.url }}"></div>
         <div class="slide-detail position-absolute offset-lg-7 offset-md-4 offset-2 text-center text-lg-start col-lg-5">
-          <h6 class="s-subtitle text-capitalize text-white mb-5">GIFTS FOR MEN</h6>
-          <h1 class="s-title display-5 mb-2">Feeling relax day, <br /> enjoy weekend</h1>
+          <h6 class="s-subtitle text-capitalize text-white mb-5">{{ promotion.subtitle }}</h6>
+          <h1 class="s-title display-5 mb-2">{{ promotion.title }}</h1>
           <div class="s-link">
-            <a href="#" class="btn rounded-0">shop now</a>
+            <a href="{{ promotion.get_absolute_url }}" class="btn rounded-0">promotion now</a>
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
-        <h2>slide 2</h2>
-        <div class="slide-bg-image bg-image" data-background="{% static 'img/5.jpeg' %}"></div>
-        <div class="slide-detail">
-          <h5 class="s-subtitle">Subtitle 2</h5>
-          <h1 class="s-title">title</h1>
-          <!-- <div > -->
-          <a href="#" class="s-link">link</a>
-          <!-- </div> -->
-        </div>
-      </div>
+      {% endfor %}
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination text-white d-lg-block"></div>
@@ -51,14 +42,13 @@
     <div class="swiper-button-prev"></div>
   </div>
   <section class="container text-center mt-5 mb-4">
-    <h1 class="display-4 mb-3 fw-normal">Spring summer 2024</h1>
+    <h1 class="display-4 mb-3 fw-normal">Summer 2024</h1>
     <h6 class="fw-normal">Find your Flower wall</h6>
   </section>
   <section>
     <div class="product-category container-fluid p-md-5 mb-2">
       <div class="row">
         {% for flower in flowers %}
-        
         <div class="col-lg-3 col-md-6">
           <div class="single-category single-category--one">
             <div class="single-category__image single-category__image--one">
@@ -78,11 +68,10 @@
 
         <div class="col-lg-3 col-md-6">
           <div class="single-category__content single-category__content--textbanner">
-            <a href="/shop/left-sidebar">+ flower wall</a>
+            <a href="{% url "flowerwalls" %}">+ flower wall</a>
             <p class="text">
               <span>love and laces</span><br /><span>made</span><br /><span>with love</span>
             </p>
-            <a class="banner-link" href="/shop/left-sidebar"></a>
           </div>
         </div>
       </div>

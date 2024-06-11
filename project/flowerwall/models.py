@@ -20,7 +20,7 @@ class FlowerWall(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, verbose_name="Date:")
     title = models.CharField(max_length=225, verbose_name="Title:")
     code = models.IntegerField(unique=True ,verbose_name="Code:")
-    image = models.ImageField(upload_to=upload_image_path, null=False, blank=False, validators=[validate_image_extension], verbose_name="Cover Image:")
+    image = models.ImageField(upload_to=upload_image_path, null=False, blank=False, validators=[validate_image_extension], verbose_name="Cover Image:", help_text="resulotion(600*800)")
     content = RichTextField(null=True)  # <-- here
     slug = models.SlugField(blank=True,null=True, unique=True, db_index=True)
 
@@ -67,7 +67,7 @@ def FlowerWall_delete(sender, instance, **kwargs):
 
 class Gallery(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, verbose_name="Date:")
-    image = models.ImageField(upload_to=upload_image_gallery_path, null=True, blank=True, validators=[validate_image_extension], verbose_name="Gallery Image:")
+    image = models.ImageField(upload_to=upload_image_gallery_path, null=True, blank=True, validators=[validate_image_extension], verbose_name="Gallery Image:", help_text="resulotion(600*800)")
     flowerwall = models.ForeignKey(FlowerWall, on_delete=models.CASCADE, verbose_name='flowerwall:')
 
     class Meta:
