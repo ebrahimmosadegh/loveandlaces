@@ -13,6 +13,7 @@ Icon
 *.jpg
 *.png
 *.mp4
+media/
 # Thumbnails
 ._*
 
