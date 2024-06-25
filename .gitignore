@@ -17,7 +17,7 @@ media/
 staticfiles/
 migrations/
 requirements.txt
-
+*.zip
 # Thumbnails
 ._*
 

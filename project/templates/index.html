@@ -23,7 +23,7 @@
     <div class="swiper-wrapper">
       {% for promotion in promotions %}
       <div class="swiper-slide">
-        <div class="slide-bg-image bg-image" data-background="{{ promotion.image.url }}"></div>
+        <div class="slide-bg-image bg-image" data-background="{% if promotion.image %}{{ promotion.image.url }}{% endif %}"></div>
         <div class="slide-detail position-absolute offset-lg-7 offset-md-4 offset-2 text-center text-lg-start col-lg-5">
           <h6 class="s-subtitle text-capitalize text-white mb-5">{{ promotion.subtitle }}</h6>
           <h1 class="s-title display-5 mb-2">{{ promotion.title }}</h1>
@@ -80,7 +80,7 @@
   <div class="container-fluid p-md-5 mb-5">
     <div class="row">
       <div class="col-lg-12">
-        <div class="countdown-background bg-img bg-image" data-background="{{ setting.bg_home_img.url }}">
+        <div class="countdown-background bg-img bg-image" data-background="{% if setting.bg_home_img %}{{ setting.bg_home_img.url }}{% endif %}">
           <div class="row p-md-5 p-3">
             <div class="ms-auto col-xl-7 col-lg-9">
               <div class="text-center">

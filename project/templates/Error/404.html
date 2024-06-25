@@ -20,7 +20,7 @@
             </div>
           </nav>
     </header>
-    <div class="nothing-found-area bg-img bg-image" data-background="{{ setting.bg_404.url }}">
+    <div class="nothing-found-area bg-img bg-image" data-background="{% if setting.bg_404 %}{{ setting.bg_404.url }}{% endif %}">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">

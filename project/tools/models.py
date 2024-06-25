@@ -37,6 +37,8 @@ class SettingsSite(models.Model):
         FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg', ])], verbose_name='Background error 500:',
                                       help_text="resulotion(1920*1000) , acception format: "
                                                 'image = [jpg, png, bmp, gif, jpeg, svg]')
+    instagram = models.URLField(blank=True, verbose_name='Link Instagram:')
+    facebook = models.URLField(blank=True, verbose_name='Link Facebook:')
     
     class Meta:
         verbose_name = 'settings'

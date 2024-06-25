@@ -40,9 +40,11 @@ playModal.addEventListener('hide.bs.modal', () => {
 
   // DATA BACKGROUND IMAGE
   var sliderBgDiv = document.querySelectorAll('.bg-image');
-  for(let i=0;i<sliderBgDiv.length;i++){
-   let sliderBgImage = sliderBgDiv[i].getAttribute('data-background')
-   sliderBgDiv[i].style.backgroundImage = "url('" + sliderBgImage + "')"
+  if(sliderBgDiv){
+    for(let i=0;i<sliderBgDiv.length;i++){
+      let sliderBgImage = sliderBgDiv[i].getAttribute('data-background')
+      sliderBgDiv[i].style.backgroundImage = "url('" + sliderBgImage + "')"
+    }
   }
 
   
