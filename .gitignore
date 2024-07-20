@@ -14,7 +14,7 @@ Icon
 *.png
 *.mp4
 media/
-staticfiles/
+#staticfiles/
 migrations/
 *.zip
 # Thumbnails
