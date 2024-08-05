@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField  # Import from ckeditor
 from django.core.validators import FileExtensionValidator
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
@@ -26,7 +27,9 @@ class SettingsSite(models.Model):
         'video = [mp4, mpg, mpeg, avi, mkv]')
     bg_cover = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Background Cover About Us, Contact, Services,:', help_text="resulotion(1920*380) , acception format: "
         'image = [jpg, png, bmp, gif, jpeg, svg]')
-    text_aboutus = models.TextField(verbose_name='Text About Us:')
+    text_slogan = RichTextField(null=True, verbose_name='Text Slogan')
+    text_aboutus = RichTextField(default='Text About Us', verbose_name='Text About Us:')
+    text_contactus = RichTextField(default='Text Contact Us', verbose_name='Text Contact Us:')
     bg_aboutus_img = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['jpg', 'png', 'svg', 'bmp', 'gif', 'jpeg',])], verbose_name='Background About Us Video:', help_text="resulotion(970*800) , acception format: "
         'image = [jpg, png, bmp, gif, jpeg, svg]')
     aboutus_video = models.FileField(upload_to=upload_media_path, blank=True, validators=[FileExtensionValidator(['mp4', 'mpg', 'mpeg', 'avi', 'mkv',])], verbose_name='Video About Us:', help_text="resulotion(1080*1920) , acception format: "

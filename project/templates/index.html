@@ -41,7 +41,7 @@
     <div class="swiper-button-prev"></div>
   </div>
   <section class="container text-center mt-5 mb-4">
-    <h1 class="display-4 mb-3 fw-normal">Find your Flower wall</h1>
+    <p class="mb-3">{{ setting.text_slogan|safe }}</p>
   </section>
   <section>
     <div class="product-category container-fluid p-md-5 mb-2">
@@ -62,10 +62,9 @@
           </div>
         </div>
         {% endfor %}
-
         <div class="col-lg-3 col-md-6">
           <div class="single-category__content single-category__content--textbanner">
-            <a href="{% url "flowerwalls" %}">+ flower wall</a>
+            <a href="{% url "flowerwalls" %}">+ flowers wall</a>
             <p class="text">
               <span>love and laces</span><br /><span>made</span><br /><span>with love</span>
             </p>
@@ -79,9 +78,9 @@
       <div class="col-lg-12">
         <div class="countdown-background bg-img bg-image" data-background="{% if setting.bg_home_img %}{{ setting.bg_home_img.url }}{% endif %}">
           <div class="row p-md-5 p-3">
-            <div class="ms-auto col-xl-7 col-lg-9">
+            <div class="ms-auto col-xl-7 col-lg-9 mt-5 mb-5">
               <div class="text-center">
-                <h3 class="display-4 fw-normal">play our flower decoration</h3>
+                <!-- <h3 class="display-4 fw-normal">play our flower decoration</h3> -->
                 <!-- Button trigger modal video -->
                 <a type="button" class="play-btn play-video" data-bs-toggle="modal" data-src="{{ setting.home_video.url }}" data-bs-target="#playModal"></a>
                 <!-- Modal -->

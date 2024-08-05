@@ -50,19 +50,12 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="section-title-container mt-5 mb-5">
-              <h4 class="text-start text-justify fw-normal lh-base">We'd love to help you create a stunning backdrop for your event with our exquisite flower walls! Please reach out to us with the below details so we can assist you and make your event unforgettable.</h4>
-              <ul class="list-group-flush text-muted">
-                <li class="list-group-item">* Name of Flower Wall</li>
-                <li class="list-group-item">* Event Date(s)</li>
-                <li class="list-group-item">* Event Location</li>
-                <li class="list-group-item">* Any Additional Information</li>
-              </ul>
-              <p class="mb-5">We look forward to helping you create a beautiful and memorable event!</p>
-              <h2 class="section-title mb-3">Contact detail</h2>
+              {{ setting.text_contactus|safe }}
             </div>
           </div>
         </div>
         <div class="space-mb-mobile-only--m50 row">
+          {% if setting.address %}
           <div class="space-mb-mobile-only--50 col-md-4">
             <div class="icon-box">
               <div class="icon-box__icon">
@@ -76,6 +69,7 @@
               </div>
             </div>
           </div>
+          {% endif %}
           <div class="space-mb-mobile-only--50 col-md-4">
             <div class="icon-box">
               <div class="icon-box__icon">
@@ -104,6 +98,7 @@
               </div>
             </div>
           </div>
+          {% if setting.hour_work %}
           <div class="space-mb-mobile-only--50 col-md-4">
             <div class="icon-box">
               <div class="icon-box__icon">
@@ -117,15 +112,7 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-page-map mb-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="google-map">{{ setting.location_maps|safe }}</div>
-          </div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -158,6 +145,15 @@
                 </div>
               </form>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-page-map mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="google-map">{{ setting.location_maps|safe }}</div>
           </div>
         </div>
       </div>
