@@ -1,20 +1,20 @@
 // navbar status scroll
-const navbar = document.querySelector('.mynavBar');
-if(navbar){
-  window.onscroll = () => {
-    if (window.scrollY > 200) {
-        navbar.classList.add('nav-active');
-        navbar.classList.add('sticky-top');
-        navbar.classList.remove('position-absolute');
+// const navbar = document.querySelector('.mynavBar');
+// if(navbar){
+//   window.onscroll = () => {
+//     if (window.scrollY > 200) {
+//         navbar.classList.add('nav-active');
+//         navbar.classList.add('sticky-top');
+//         navbar.classList.remove('position-absolute');
 
-    } else {
-        navbar.classList.remove('nav-active');
-        navbar.classList.remove('sticky-top');
-        navbar.classList.add('position-absolute');
+//     } else {
+//         navbar.classList.remove('nav-active');
+//         navbar.classList.remove('sticky-top');
+//         navbar.classList.add('position-absolute');
 
-    }
-};
-}
+//     }
+// };
+// }
 // Declare a variable to store the video source
 let videoSrc;
 // Add click event listener to all elements with class "play-video"

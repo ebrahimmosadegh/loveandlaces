@@ -35,10 +35,8 @@
         <div class="container">
           <div class="row">
             <div class="mx-auto col-lg-8">
-              <div class="about-title-container text-center pt-5">
-                <p class="text-capitalize mb-5">SIMPLY OR WHITE</p>
-                <h2 class="display-4 fw-normal mb-4">Clever &amp; unique ideas</h2>
-                <p class="lh-lg text-secondary">Our journey began with a simple desire: to find the perfect backdrop for our wedding day. Like many couples, we dreamed of a picturesque setting that would not only enhance the beauty of our ceremony but also create timeless memories captured in photographs. Little did we know that this search would ignite a passion and lead us down an unexpected path.</p>
+              <div class="about-title-container lh-lg text-secondary pt-5">
+                <p>{{ setting.text_aboutus|linebreaks }}</p>
               </div>
             </div>
           </div>
@@ -97,7 +95,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="about-page-text">
-                    <p class="space-mb--35">{{ setting.text_aboutus|linebreaks }}</p>
+                    
                       <a class="lezada-button lezada-button--medium lezada-button--icon--left link-underline link-underline-opacity-0"
                       href="{% url "flowerwalls" %}"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
                         viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">

@@ -2,12 +2,12 @@
 {% load render_partial %}
 
 <footer class="bg-body-tertiary pt-5 pb-3">
-    <div class="container-lg">
+    <div class="container-fluid">
       <div class="row">
         <div class="footer-single-widget col-md-6">
-          <p class="footer-email"><a href="mailto:{{ setting.email }}"
-              class="link-secondary link-underline-opacity-0">{{ setting.email }}</a></p>
-          <a href="tel:{{ setting.call }}" class="footer-phone link-underline link-underline-opacity-0">{{ setting.call }}</a>
+          <div class="text-start text-md-center mb-4 navbar-brand">
+            <img src="{{ setting.logo.url }}" class="img-fluid" alt="">
+          </div>
         </div>
         <div class="footer-single-widget col-md-3 col-6">
           <nav class="footer-single-widget__nav">
@@ -47,19 +47,20 @@
                 </a>
               </li>
               {% endif %}
+              <li>
+                <a href="mailto:{{ setting.email }}">{{ setting.email }}</a>
+              </li>
+              <li>
+                <a href="tel:{{ setting.call }}">{{ setting.call }}</a>
+              </li>
             </ul>
           </nav>
         </div>
       </div>
-      <div class="align-items-center mb-4 row">
-        <div class="col-md-6">
-          <div class="copyright-text mb-2 text-muted">
-            <p>© 2024 Love and laces.<span class="d-block mt-2">All Rights Reserved</span></p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="text-start text-md-center mb-4 navbar-brand">
-            <img src="{{ setting.logo.url }}" class="img-fluid" alt="">
+      <div class="row">
+        <div class="col-12 p-0">
+          <div class="copyright-text">
+            <small>© 2024 Love and laces..All Rights Reserved | {{ setting.address  }}</small>
           </div>
         </div>
       </div>

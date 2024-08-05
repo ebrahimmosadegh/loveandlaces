@@ -14,6 +14,8 @@ def contact_page(request):
     contact_form = CreateContactForm(request.POST or None)
     if request.method == 'POST':
         if contact_form.is_valid():
+            name = contact_form.cleaned_data.get('name')
+            phone = contact_form.cleaned_data.get('phone')
             email = contact_form.cleaned_data.get('email')
             subject = contact_form.cleaned_data.get('subject')
             text = contact_form.cleaned_data.get('text')
@@ -27,7 +29,7 @@ def contact_page(request):
             if cap_json['success'] == False:
                 messages.error(request, "Check I am not a robot", extra_tags='contact_message_error')
             else:
-                ContactUs.objects.create(email=email, subject=subject, text=text, is_read=False)
+                ContactUs.objects.create(name=name, phone=phone, email=email, subject=subject, text=text, is_read=False)
                 messages.success(request, 'Your message has been successfully registered', extra_tags='contact_message')
                 contact_form = CreateContactForm()
         else:
