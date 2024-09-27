@@ -9,11 +9,11 @@
 Icon
 
 # image and video
-*.jpeg
-*.jpg
-*.png
-*.mp4
-media/
+# *.jpeg
+# *.jpg
+# *.png
+# *.mp4
+# media/
 .vscode/
 *.gitignore
 #staticfiles/
